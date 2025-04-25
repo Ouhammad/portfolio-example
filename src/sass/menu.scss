@@ -1,0 +1,31 @@
+
+.large-screen{
+    @media screen and  (max-width: 768px){
+        display: none;
+    }
+}
+.mob-tab{
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: block;
+        color: white;
+        font-weight: 500;
+        width: 1.7em;
+        margin-right: 10px;
+        text-align: center;
+        align-self: flex-end;
+        &:hover{
+            .large-screen{
+                display: flex;
+            }
+        }
+        &::after{
+            width: 0;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+    
+}
+

@@ -1,0 +1,252 @@
+@media screen and (max-width: 480px) {
+  /* || Section Header  */
+  .fixed-top {
+    position: fixed;
+    box-sizing: border-box;
+    font-size: 6vw;
+    background-color: rgba(0, 0, 0, 0.902);
+    font-weight: 500;
+    margin: 0;
+  }
+  .fixed-top .header-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0.8rem 1rem 0.2rem;
+    justify-content: space-between;
+    max-width: 100%;
+    min-width: 320px;
+  }
+  .fixed-top .header-container .mob-tab {
+    display: block;
+  }
+  .fixed-top .header-container .large-screen {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.902);
+    padding: 1rem;
+  }
+  .fixed-top .header-container .large-screen .menu-mob-close {
+    text-align: center;
+    font-size: 10vw;
+    display: none;
+  }
+  .fixed-top .header-container .large-screen:target {
+    display: flex;
+  }
+  .fixed-top .header-container .large-screen:target .menu-mob-close {
+    display: inline-block;
+  }
+  .fixed-top .header-container .large-screen:not(:target) {
+    display: none;
+  }
+  /* || Section Hero  */
+  .hero {
+    max-width: 100%;
+    height: 80vh;
+    background-position: -140vw;
+  }
+  .hero .container-hero {
+    top: 30vw;
+  }
+  .hero .container-hero .whoami-title-hero {
+    display: flex;
+    flex-flow: column;
+  }
+  .hero .container-hero .whoami-title-hero .whoami-title-hero--intro {
+    display: inline-block;
+  }
+  .hero .container-hero .subtitle-hero {
+    margin: auto;
+    width: 68vw;
+    font-size: 6vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+  }
+  .hero .container-hero .subtitle-hero--content {
+    position: relative;
+  }
+  .hero .container-hero .subtitle-hero--content::before {
+    content: "Developer";
+    width: fit-content;
+    color: #fff;
+    animation: words 20000ms infinite, typing 20000ms infinite;
+  }
+  .hero .container-hero .subtitle-hero--content::after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    width: calc(100% + 2vw);
+    transform: scaleX(1);
+    opacity: 1;
+    border-left: #0078ff 2vw solid;
+    right: -2vw;
+    transform-origin: right;
+  }
+  /* || Section About  */
+  .main-container {
+    padding: 5vh 2vw;
+    flex-direction: column;
+  }
+  .main-container .about-container {
+    padding: 3vh 2vw;
+    flex-direction: column;
+  }
+  .main-container .about-container::before {
+    content: "Resume";
+    text-align: center;
+    font-size: 10vw;
+    width: 10vw;
+    height: 5vw;
+    top: -2vh;
+    left: 25%;
+    position: relative;
+    margin-bottom: 3vh;
+    text-decoration: underline #0078ff;
+  }
+  .main-container .left-resume {
+    width: 100%;
+    margin: auto;
+  }
+  .main-container .left-resume .header-left-resume {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container .left-resume .header-left-resume img {
+    width: 35vw;
+  }
+  .main-container .left-resume .text-resume {
+    padding: 0.5rem 0;
+  }
+  .main-container .right-resume {
+    width: 100%;
+  }
+  .main-container .right-resume .about-text {
+    font-size: 3vw;
+  }
+  /* ||| Section Service */
+  .container-service .service-body {
+    grid-template: repeat(6, 1fr)/repeat(1, 1fr);
+    column-gap: 0;
+  }
+  .container-service .each-service-container {
+    padding: 2vh 2vw;
+    max-width: none;
+    margin: 0 5vw;
+  }
+  .container-service .icon-service {
+    width: 7vh;
+    height: 7vh;
+  }
+  .container-service .icon-service .icon {
+    position: relative;
+    width: 5vh;
+    height: 5vh;
+    margin: 1vh;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    padding: 0.5vh;
+  }
+  .container-service .icon-service svg {
+    width: 4vh;
+    height: 4vh;
+    color: #fff;
+  }
+  .container-service .each-title-service {
+    font-size: 3vw;
+  }
+  /* ||  Section counter || */
+  .mobil-grid {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5vh;
+    display: grid;
+    grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+    gap: 2vh;
+  }
+  .mobil-grid .counter {
+    width: 100%;
+    height: 100%;
+  }
+  .mobil-grid .counter .counter-icon {
+    width: 7vh;
+    height: 7vh;
+    box-shadow: 0 0 0 5px #cde1f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobil-grid .counter .icon-svg {
+    max-width: 5vh;
+  }
+  .mobil-grid .counter .number {
+    font-size: 3vh;
+  }
+  .mobil-grid .counter .text-counter {
+    font-size: 2.3vh;
+  }
+  /* ||  Section counter || */
+  .box .anim-image {
+    margin: 0;
+  }
+  .article-body {
+    padding: 0 1vw;
+    height: 6vh;
+  }
+  .article-body .article-body-top {
+    margin-bottom: 1vw;
+  }
+  .article-body .article-body-top .circle-btn img {
+    width: 5vw;
+  }
+  .article-body .text-desc {
+    font-size: 1.6vw;
+    font-weight: 400;
+  }
+  /* ||  Section Contributor || */
+  .contributor .slider-holder .contrib__desc {
+    max-width: 100%;
+  }
+  /* ||  Section Blog || */
+  .container .blog-div {
+    flex-wrap: wrap;
+  }
+  .container .blog-div .artcile__footer .article__timing {
+    margin-left: 40%;
+  }
+  /* ||  Section Contact || */
+}
+/* ||  @KEYFRAMES || */
+/* || hero section || */
+@keyframes words {
+  30% {
+    content: "Freelancer";
+  }
+  55% {
+    content: "Designer";
+  }
+  75% {
+    content: "and FullStack Developer";
+  }
+}
+@keyframes typing {
+  20%, 45%, 70% {
+    transform: scaleX(1);
+  }
+  30%, 55%, 80% {
+    transform: scaleX(0);
+  }
+}
+
+/*# sourceMappingURL=smartphone.css.map */

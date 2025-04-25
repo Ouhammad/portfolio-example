@@ -1,0 +1,214 @@
+.contain__form .form__area, .contain__form .form__inp {
+  width: calc(100% - 10px);
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.contact-overlay-blue {
+  background-image: url("../images/overlay-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 500px;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .contact-overlay-blue {
+    height: 800px;
+  }
+}
+
+.contain {
+  padding: 50px 80px 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 600;
+  align-items: center;
+  margin: auto;
+}
+@media screen and (max-width: 480px) {
+  .contain {
+    top: 0;
+    right: 0.5vw;
+    left: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: calc(100% - 1rem);
+    min-width: 160px;
+    margin: auto;
+  }
+}
+.contain .white-zone {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background-color: #ffffff;
+  opacity: 1;
+  margin: auto;
+  color: #000;
+  padding: 20px;
+  height: 370px;
+  max-width: 768px;
+}
+@media screen and (max-width: 480px) {
+  .contain .white-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+    position: relative;
+    padding: 0;
+  }
+}
+.contain .white-zone .title {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  position: relative;
+}
+.contain .white-zone .title::after {
+  content: "";
+  width: 20%;
+  height: 0.2rem;
+  background-color: rgb(0, 84, 178.5);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 480px) {
+  .contain .white-zone .title {
+    font-size: 1rem;
+  }
+}
+.contain__form {
+  display: flex;
+  width: 46.1538461538%;
+  text-align: justify;
+  flex-flow: column;
+}
+@media screen and (max-width: 480px) {
+  .contain__form {
+    z-index: 940;
+    position: absolute;
+    top: 10px;
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+  }
+}
+.contain__form .form {
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  height: 300px;
+}
+.contain__form .form__submit {
+  margin: auto;
+  width: 150px;
+  padding: 5px;
+  border-radius: 100px;
+  background-color: #0078ff;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+.contain__info {
+  width: 46.1538461538%;
+  text-align: justify;
+}
+@media screen and (max-width: 480px) {
+  .contain__info {
+    position: absolute;
+    width: 90%;
+    margin: auto;
+    top: 400px;
+    font-size: 0.7rem;
+    z-index: 940;
+  }
+}
+.contain__info .info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: baseline;
+  gap: 20px;
+}
+.contain__info .info__address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.8rem;
+}
+.contain__info .info__address div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 2vh;
+  padding: 0.2vh;
+}
+.contain__info .info__address div svg {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 2vh;
+}
+@media screen and (max-width: 480px) {
+  .contain__info .info__address svg {
+    margin-right: 1vh;
+    width: 2vh;
+    height: 2vh;
+  }
+}
+.contain__info .info__social {
+  display: flex;
+  justify-content: start;
+}
+.contain__info .info__social .social-link {
+  margin-right: 5px;
+  padding: 10px;
+  border-radius: 20p;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 1px 1px 1px #0078ff inset, -1px -1px 1px #0078ff inset;
+  width: 5vh;
+  border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
+}
+.contain__info .info__social .social-link:hover {
+  background-color: #0078ff;
+  box-shadow: 1px 1px 1px #fff inset, -1px -1px 1px #fff inset;
+}
+.contain__info .info__social .social-link:hover::after {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .contain__info .info__social .social-link {
+    background-color: #0078ff;
+    color: #fff;
+    width: 4vh;
+    margin: 0;
+    padding: 1vh;
+  }
+  .contain__info .info__social .social-link svg {
+    width: 2vh;
+    height: 2vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contain__info .info__social {
+    justify-content: space-around;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */
