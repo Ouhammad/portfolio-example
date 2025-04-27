@@ -37,7 +37,7 @@ if(!empty($_POST)){
                     <div class="contain__form">
                     
                         <h2 class="title">Send Message to US</h2>
-                        <form class="form" method='POST' action="index.php">
+                        <form class="form" method='POST' action="<?= $router->url('contact') ?>">
                             <input class="form__inp" type="text" name="name" id="name" placeholder="Your Name" required>
                             <input class="form__inp" type="text" name="email" id="email" placeholder=" Your email" required>
                             <input class="form__inp" type="text" name="subject" id="subject" placeholder="Subject" required>
