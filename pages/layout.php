@@ -36,12 +36,12 @@
             <nav>
                 <a href="#menu-mob" class="mob-tab"><img src="src-svg/bars.svg" alt=""></a>
                 <ul class="large-screen" id="menu-mob">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li><a href="<?= $router->url('home') ?>">Home</a></li>
+                    <li><a href="<?= $router->url('about') ?>">About</a></li>
+                    <li><a href="<?= $router->url('home') ."#services" ?>">Services</a></li>
+                    <li><a href="<?= $router->url('home') ."#work" ?>">Work</a></li>
+                    <li><a href="<?= $router->url('blog') ?>">Blog</a></li>
+                    <li><a href="<?= $router->url('contact') ?>">contact</a></li>
                     <li class="menu-mob-close"><a href="">X</a></li>
                 </ul>
             </nav>
@@ -60,3 +60,10 @@
         </div>
     </div>
     <main>
+    <?=  $content ?>
+    </main>
+
+
+</body>
+
+</html>

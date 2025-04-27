@@ -1,20 +1,51 @@
+<?php
+
+use App\Connection;
+
+$alert = false;
+$success = false;
+if(!empty($_POST)){
+    $pdo = Connection::getPDO();
+    $name = $_POST['name'];
+    $mail = $_POST['email'];
+    $message = $_POST['message'];
+    $subject = $post['subject'];
+    $stmt = $pdo->prepare("INSERT INTO request VALUES(?, ?, ?, ?)");
+    $ok = $stmt->execute([$name, $mail, $subject, $message]);
+    
+    if($ok === false){
+        $alert = true;
+    }else{
+        $success = true;
+    }
+}
+
+?>
+
 <!--/* Start Contact Section */-->
 
 <section id="contact" class="contact-overlay-blue">
             <div class="overlay-blue"></div>
             <div class="contain">
                 <div class="white-zone">
+                    
+                    <?php if($alert): ?>
+                        <div class="contain__alert contain__alert--danger">Votre demande n'a pas été envoyé</div>
+                    <?php elseif($success): ?>
+                        <div class="contain__alert contain__alert--success">Votre demande a bien été envoyé</div>
+                    <?php endif; ?>
                     <div class="contain__form">
+                    
                         <h2 class="title">Send Message to US</h2>
-                        <form class="form" method='POST' action="">
-                            <input class="form__inp" type="text" name="name" id="name" placeholder="Your Name">
-                            <input class="form__inp" type="text" name="email" id="email" placeholder=" Your email">
-                            <input class="form__inp" type="text" name="subject" id="subject" placeholder="Subject">
-                            <label for="message">Message</label>
+                        <form class="form" method='POST' action="<?= $router->url('contact') ?>">
+                            <input class="form__inp" type="text" name="name" id="name" placeholder="Your Name" required>
+                            <input class="form__inp" type="text" name="email" id="email" placeholder=" Your email" required>
+                            <input class="form__inp" type="text" name="subject" id="subject" placeholder="Subject" required>
+                            <label for="message" ></label>
                             <textarea class="form__area" name="message" id="message" cols="30"
-                                rows="10" style="resize: none;"> </textarea>
+                                rows="10" required style="resize: none;"> </textarea>
                             <!-- <button  class=" form__submit">Send Message</button> -->
-                            <input class=" form__submit" type="submit" value="Send Message">
+                            <input class="form__submit" type="submit" value="Send Message">
                         </form>
                     </div>
                     <div class="contain__info">
