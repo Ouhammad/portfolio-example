@@ -4,19 +4,31 @@ use App\Connection;
 
 $alert = false;
 $success = false;
-var_dump($_POST);
+
+
 if(!empty($_POST)){
-    
+
     $pdo = Connection::getPDO();
+    
     $name = $_POST['name'];
     $mail = $_POST['email'];
     $message = $_POST['message'];
-    $subject = $post['subject'];
-    $stmt = $pdo->prepare("INSERT INTO request VALUES(?, ?, ?, ?)");
-    $ok = $stmt->execute([$name, $mail, $subject, $message]);
+    $subject = $_POST['subject'];
+    $created_at = (new DateTime())->format('Y-m-d H:i:s');
+    $stmt = $pdo->prepare("INSERT INTO requests 
+                            VALUES(:name, :mail, :subject, :message, :created)");
     
+    $ok = $stmt->execute([
+        'name' => $name, 
+        'mail' => $mail, 
+        'subject' => $subject, 
+        'message' => $message, 
+        'created' => $created_at]);
+    var_dump($ok);
     if($ok === false){
         $alert = true;
+        
+        echo "Votre n'a pas pu être exécuté";
     }else{
         $success = true;
     }
