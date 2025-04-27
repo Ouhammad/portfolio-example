@@ -1,17 +1,36 @@
-<?php require dirname(__DIR__). '/src/parts/header.php'; ?>
+<?php
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use App\Router;
 
 
 
-<?php require dirname(__DIR__). '/src/parts/about.php'; ?>
+// if(isset($_GET['page']) && $_GET['page'] === "1"){
+       
+//        $uri = explode('?', $_SERVER['REQUEST_URI'])[0];
+//        $get = $_GET;
+//        unset($get['page']);
+       
+//        $query = http_build_query($get);
+//        if(!empty($get)) $uri .= "?" . $query;
+       
+//        header('location: ' . $uri);
+//        http_response_code(301);
+//        exit();
+        
+       
+// }
 
-<?php require dirname(__DIR__). '/src/parts/service.php'; ?>
+$router = new Router(dirname(__DIR__). "/pages");
 
-<?php require dirname(__DIR__). '/src/parts/counter.php'; ?>
+$router->get('/', 'home', 'home')
+       ->get('/blog', 'blog', 'blog')
+       ->get('/contact', 'contact', 'contact')
+       ->get('/about', 'about', 'about')
+       ->run(); 
 
-<?php require dirname(__DIR__). '/src/parts/work.php'; ?>
 
-<?php require dirname(__DIR__). '/src/parts/blog.php'; ?>
 
-<?php require dirname(__DIR__). '/src/parts/contact.php'; ?>
 
-<?php require dirname(__DIR__). '/src/parts/footer.php'; ?>
+

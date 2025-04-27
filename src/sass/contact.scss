@@ -113,10 +113,37 @@ $decoration-color: #0078ff;
         }
     
     }
+
+    &__alert{
+        position: absolute;
+        width: 50%;
+        height: 10vh;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--danger{
+            background-color: color.scale(#f00, $lightness: -10%);
+            color: color.scale(#fff, $blackness: 10%);
+        }
+
+        &--success{
+            background-color: color.scale(rgb(140, 206, 120), $lightness: -10%);
+            color: color.scale(#fff, $blackness: 10%);
+        }
+    }
+
     &__form{
         display: flex;
-        @include width-calc;
+        //@include width-calc;
         flex-flow: column;
+
+        
 
         @media  screen and (max-width: 480px) {
             z-index: 940;
@@ -137,6 +164,7 @@ $decoration-color: #0078ff;
             }
             &__area{
                 @extend %large-width;
+                resize: none;
                 
             }
             &__submit{
