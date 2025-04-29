@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS requests(
     name VARCHAR(200) NOT NULL,
     email VARCHAR(255) NOT NULL,
     subject VARCHAR(100) NOT NULL,
-    MESSAGE TEXT NOT NULL,
+    message TEXT NOT NULL,
     created_at DATETIME NOT NULL,
     PRIMARY KEY (id)
 );
+

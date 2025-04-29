@@ -15,20 +15,20 @@ if(!empty($_POST)){
     $message = $_POST['message'];
     $subject = $_POST['subject'];
     $created_at = (new DateTime())->format('Y-m-d H:i:s');
-    $stmt = $pdo->prepare("INSERT INTO requests 
+    
+    $stmt = $pdo->prepare("INSERT INTO requests (name, email, subject, message, created_at)
                             VALUES(:name, :mail, :subject, :message, :created)");
     
     $ok = $stmt->execute([
-        'name' => $name, 
-        'mail' => $mail, 
-        'subject' => $subject, 
-        'message' => $message, 
-        'created' => $created_at]);
-    var_dump($ok);
+            'name' => $name, 
+            'mail' => $mail, 
+            'subject' => $subject, 
+            'message' => $message, 
+            'created' => $created_at]);
+   
     if($ok === false){
         $alert = true;
-        
-        echo "Votre n'a pas pu être exécuté";
+       
     }else{
         $success = true;
     }
