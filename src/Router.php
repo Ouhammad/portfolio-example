@@ -37,7 +37,7 @@ class Router{
 
     public function match(string $target_url, string $file_path, ?string $name_route = null):self
     {
-        $this->router->map('POST|GET', $target_url, $file_path, $name_route);
+        $this->router->map('GET|POST', $target_url, $file_path, $name_route);
         return $this;
     }
 

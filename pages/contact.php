@@ -4,17 +4,31 @@ use App\Connection;
 
 $alert = false;
 $success = false;
+
+
 if(!empty($_POST)){
+
     $pdo = Connection::getPDO();
+    
     $name = $_POST['name'];
     $mail = $_POST['email'];
     $message = $_POST['message'];
-    $subject = $post['subject'];
-    $stmt = $pdo->prepare("INSERT INTO request VALUES(?, ?, ?, ?)");
-    $ok = $stmt->execute([$name, $mail, $subject, $message]);
+    $subject = $_POST['subject'];
+    $created_at = (new DateTime())->format('Y-m-d H:i:s');
     
+    $stmt = $pdo->prepare("INSERT INTO requests (name, email, subject, message, created_at)
+                            VALUES(:name, :mail, :subject, :message, :created)");
+    
+    $ok = $stmt->execute([
+            'name' => $name, 
+            'mail' => $mail, 
+            'subject' => $subject, 
+            'message' => $message, 
+            'created' => $created_at]);
+   
     if($ok === false){
         $alert = true;
+       
     }else{
         $success = true;
     }
@@ -37,7 +51,7 @@ if(!empty($_POST)){
                     <div class="contain__form">
                     
                         <h2 class="title">Send Message to US</h2>
-                        <form class="form" method='POST' action="<?= $router->url('contact') ?>">
+                        <form class="form" method='post' action="">
                             <input class="form__inp" type="text" name="name" id="name" placeholder="Your Name" required>
                             <input class="form__inp" type="text" name="email" id="email" placeholder=" Your email" required>
                             <input class="form__inp" type="text" name="subject" id="subject" placeholder="Subject" required>

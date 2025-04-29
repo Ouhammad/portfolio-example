@@ -26,7 +26,7 @@ $router = new Router(dirname(__DIR__). "/pages");
 
 $router->get('/', 'home', 'home')
        ->get('/blog', 'blog', 'blog')
-       ->get('/contact', 'contact', 'contact')
+       ->match('/contact', 'contact', 'contact')
        ->get('/about', 'about', 'about')
        ->run(); 
 

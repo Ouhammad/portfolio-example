@@ -8,7 +8,8 @@
 
     <!-- Style css -->
 
-    <!-- <link rel="stylesheet" href="assets/css/menu.css"> -->
+    <!--<link rel="stylesheet" href="assets/css/menu.css"> -->
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/contributor.css">
@@ -34,7 +35,7 @@
             <h1 class="logo">HMB</h1>
 
             <nav>
-                <a href="#menu-mob" class="mob-tab"><img src="src-svg/bars.svg" alt=""></a>
+                <a href="#menu-mob" class="mob-tab"><img src="assets/images/bars.svg" alt=""></a>
                 <ul class="large-screen" id="menu-mob">
                     <li><a href="<?= $router->url('home') ?>">Home</a></li>
                     <li><a href="<?= $router->url('about') ?>">About</a></li>

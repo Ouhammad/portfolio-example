@@ -10,7 +10,7 @@ final class Connection{
     public static function getPDO()
     {
         if(is_null(self::$_instance)){
-            self::$_instance = new PDO("mysql:dbname=db_portfolio;dbhost=localhost", "root", "Devahuom1!@#",[
+            self::$_instance = new PDO("mysql:host=localhost;dbname=db_portfolio", "root", "Devahuom1!@#$",[
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             ]);
         }

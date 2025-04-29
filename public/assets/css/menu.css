@@ -27,5 +27,25 @@
     max-width: 100%;
   }
 }
+@media screen and (max-width: 480px) {
+  .mob-tab {
+    display: block;
+    color: white;
+    font-weight: 500;
+    width: 1.7em;
+    margin-right: 10px;
+    text-align: center;
+    align-self: flex-end;
+  }
+  .mob-tab:hover .large-screen {
+    display: flex;
+  }
+  .mob-tab::after {
+    width: 0;
+  }
+  .mob-tab img {
+    max-width: 100%;
+  }
+}
 
 /*# sourceMappingURL=menu.css.map */
